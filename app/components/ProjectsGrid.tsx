@@ -1,8 +1,19 @@
 import React from 'react'
 import { projects } from '../data/projects'
 import Image from 'next/image'
+// import Image, { StaticImageData } from 'next/image'
 
-function ProjectCard({ title, description, link, tags, image }) {
+export type Project = {
+  id: string;
+  title: string;
+  description: string;
+  link: string;
+  tags: string[];
+  image: string;
+};
+
+
+function ProjectCard({ title, description, link, tags, image }: Project) {
   return (
     <article className="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow p-4 flex flex-col">
       <Image src={image} alt={title} width={300} height={400} className="h-40 bg-gray-100 rounded-md mb-4 flex items-center justify-center text-gray-400" />
